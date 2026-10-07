@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DriveCraft | Premium Cars</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #050505;
+            color: white;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 75px;
+            background: rgba(5,5,5,0.85);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #e50914;
+        }
+
+        .logo small {
+            display: block;
+            font-size: 7px;
+            letter-spacing: 5px;
+            color: #aaa;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e50914;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 22px;
+            font-size: 18px;
+        }
+
+        .nav-icons i {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-icons i:hover {
+            color: #e50914;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.95) 0%,
+                    rgba(0,0,0,0.65) 45%,
+                    rgba(0,0,0,0.1) 100%
+                ),
+                url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=90");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            padding: 120px 7% 60px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-label {
+            font-size: 13px;
+            letter-spacing: 7px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 7vw, 95px);
+            line-height: 0.95;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #e50914;
+        }
+
+        .hero p {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 500px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 27px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-red {
+            background: #e50914;
+            color: white;
+        }
+
+        .btn-red:hover {
+            background: white;
+            color: #111;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: black;
+        }
+
+
+        /* =========================
+           TRAILER
+        ========================== */
+
+        .trailer-section {
+            padding: 100px 7%;
+            background: #080808;
+        }
+
+        .trailer-container {
+            max-width: 1300px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .video-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+        }
+
+        .video-box iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: block;
+            border: none;
+        }
+
+        .section-label {
+            color: #e50914;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .trailer-text h2 {
+            font-size: 48px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .trailer-text h2 span {
+            color: #e50914;
+        }
+
+        .trailer-text p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           VEHICLES
+        ========================== */
+
+        .vehicles {
+            padding: 100px 7%;
+            background: #050505;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading p {
+            color: #e50914;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size: 45px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 span {
+            color: #e50914;
+        }
+
+        .car-grid {
+            max-width: 1400px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .car-card {
+            background: #111;
+            border: 1px solid #222;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+            border-color: #e50914;
+            box-shadow: 0 20px 50px rgba(229,9,20,0.15);
+        }
+
+        .car-image {
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .car-card:hover .car-image img {
+            transform: scale(1.08);
+        }
+
+        .car-info {
+            padding: 22px;
+        }
+
+        .car-info h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .car-info p {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .car-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-weight: 700;
+            color: white;
+        }
+
+        .details {
+            color: #e50914;
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           MARKETING SECTION
+        ========================== */
+
+        .marketing {
+            min-height: 450px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.65),
+                    rgba(0,0,0,0.85)
+                ),
+                url("https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 80px 20px;
+        }
+
+        .marketing-content {
+            max-width: 750px;
+        }
+
+        .marketing h2 {
+            font-size: clamp(40px, 6vw, 70px);
+            text-transform: uppercase;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .marketing h2 span {
+            color: #e50914;
+        }
+
+        .marketing p {
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services {
+            padding: 100px 7%;
+            background: #080808;
+        }
+
+        .service-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            background: #111;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            border-color: #e50914;
+            transform: translateY(-5px);
+        }
+
+        .service i {
+            font-size: 35px;
+            color: #e50914;
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            padding: 90px 7%;
+            text-align: center;
+            background: #050505;
+        }
+
+        .contact h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #020202;
+            padding: 60px 7% 25px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-about {
+            max-width: 350px;
+        }
+
+        .footer-about p {
+            color: #777;
+            line-height: 1.7;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #777;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: #e50914;
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            color: #555;
+            text-align: center;
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media(max-width: 1000px) {
+
+            nav {
+                display: none;
+            }
+
+            .car-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .trailer-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media(max-width: 600px) {
+
+            header {
+                padding: 0 5%;
+            }
+
+            .hero {
+                padding: 120px 6% 60px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .hero-label {
+                font-size: 10px;
+                letter-spacing: 4px;
+            }
+
+            .car-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trailer-text h2 {
+                font-size: 38px;
+            }
+
+            .section-heading h2 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <div class="logo">
+        DRIVE<span>CRAFT</span>
+        <small>DRIVE YOUR DREAMS</small>
+    </div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#vehicles">VEHICLES</a>
+        <a href="#services">SERVICES</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <div class="nav-icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            LUXURY / PERFORMANCE / STYLE
+        </div>
+
+        <h1>
+            YOUR NEXT RIDE
+            <span>AWAITS</span>
+        </h1>
+
+        <p>
+            Discover premium vehicles built for people who
+            demand performance, comfort and unforgettable
+            driving experiences.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#vehicles" class="btn btn-red">
+                Explore Vehicles
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#trailer" class="btn btn-outline">
+                <i class="fa-solid fa-play"></i>
+                Watch Trailer
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TRAILER
+========================= -->
+
+<section class="trailer-section" id="trailer">
+
+    <div class="trailer-container">
+
+        <div class="video-box">
+
+            <iframe
+                src="https://www.youtube.com/embed/JbPBHtLstGw?si=sQZLME93coT25X0r"
+                title="DriveCraft Car Trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+        <div class="trailer-text">
+
+            <div class="section-label">
+                OUR TRAILER
+            </div>
+
+            <h2>
+                THE DRIVE
+                <span>BEGINS HERE</span>
+            </h2>
+
+            <p>
+                Experience the power, style and technology behind
+                our collection. From powerful sports cars to
+                luxurious SUVs, find a vehicle that matches your
+                lifestyle.
+            </p>
+
+            <a href="#vehicles" class="btn btn-red">
+                View Vehicles
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VEHICLES
+========================= -->
+
+<section class="vehicles" id="vehicles">
+
+    <div class="section-heading">
+
+        <p>FEATURED VEHICLES</p>
+
+        <h2>
+            OUR <span>TOP PICKS</span>
+        </h2>
+
+    </div>
+
+
+    <div class="car-grid">
+
+
+        <!-- CAR 1 -->
+
+        <div class="car-card">
+
+            <div class="car-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=85"
+                alt="Ford Mustang">
+
+            </div>
+
+            <div class="car-info">
+
+                <h3>Ford Mustang GT</h3>
+
+                <p>
+                    Power. Heritage. Freedom.
+                </p>
+
+                <div class="car-bottom">
+
+                    <div class="price">
+                        $45,000
+                    </div>
+
+                    <a href="#" class="details">
+                        VIEW DETAILS →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAR 2 -->
+
+        <div class="car-card">
+
+            <div class="car-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=900&q=85"
+                alt="Toyota Supra">
+
+            </div>
+
+            <div class="car-info">
+
+                <h3>Toyota Supra</h3>
+
+                <p>
+                    Legend Reborn.
+                </p>
+
+                <div class="car-bottom">
+
+                    <div class="price">
+                        $52,000
+                    </div>
+
+                    <a href="#" class="details">
+                        VIEW DETAILS →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAR 3 -->
+
+        <div class="car-card">
+
+            <div class="car-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=900&q=85"
+                alt="Lamborghini">
+
+            </div>
+
+            <div class="car-info">
+
+                <h3>Lamborghini Huracán</h3>
+
+                <p>
+                    Pure adrenaline.
+                </p>
+
+                <div class="car-bottom">
+
+                    <div class="price">
+                        $230,000
+                    </div>
+
+                    <a href="#" class="details">
+                        VIEW DETAILS →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAR 4 -->
+
+        <div class="car-card">
+
+            <div class="car-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=85"
+                alt="Mercedes G-Class">
+
+            </div>
+
+            <div class="car-info">
+
+                <h3>Mercedes G-Class</h3>
+
+                <p>
+                    Luxury meets power.
+                </p>
+
+                <div class="car-bottom">
+
+                    <div class="price">
+                        $145,000
+                    </div>
+
+                    <a href="#" class="details">
+                        VIEW DETAILS →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MARKETING SECTION
+========================= -->
+
+<section class="marketing">
+
+    <div class="marketing-content">
+
+        <div class="section-label">
+            DRIVE DIFFERENT
+        </div>
+
+        <h2>
+            FIND YOUR
+            <span>PERFECT CAR</span>
+        </h2>
+
+        <p>
+            Your next adventure starts here.
+            Explore our premium collection and
+            drive away with confidence.
+        </p>
+
+        <a href="#contact" class="btn btn-red">
+            Get In Touch
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="services">
+
+    <div class="section-heading">
+
+        <p>WHAT WE OFFER</p>
+
+        <h2>
+            OUR <span>SERVICES</span>
+        </h2>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service">
+
+            <i class="fa-solid fa-car"></i>
+
+            <h3>Vehicle Sales</h3>
+
+            <p>
+                Find premium vehicles carefully selected
+                for quality, performance and reliability.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+            <h3>Car Maintenance</h3>
+
+            <p>
+                Professional maintenance services to
+                keep your vehicle performing at its best.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <i class="fa-solid fa-handshake"></i>
+
+            <h3>Easy Financing</h3>
+
+            <p>
+                Flexible financing options designed to
+                make owning your dream car easier.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="section-label">
+        READY TO DRIVE?
+    </div>
+
+    <h2>
+        YOUR DREAM CAR
+        <span>IS WAITING.</span>
+    </h2>
+
+    <p>
+        Contact us today and let us help you find your next vehicle.
+    </p>
+
+    <a href="mailto:info@drivecraft.com" class="btn btn-red">
+        Contact Us
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-about">
+
+            <div class="logo">
+                DRIVE<span>CRAFT</span>
+                <small>DRIVE YOUR DREAMS</small>
+            </div>
+
+            <p>
+                Premium vehicles. Unmatched performance.
+                Your journey begins with DriveCraft.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>QUICK LINKS</h3>
+
+            <a href="#home">Home</a>
+            <a href="#vehicles">Vehicles</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>FOLLOW US</h3>
+
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+                Facebook
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-tiktok"></i>
+                TikTok
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 DriveCraft. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
